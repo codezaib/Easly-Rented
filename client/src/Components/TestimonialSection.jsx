@@ -1,20 +1,20 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 const testimonials = [
   {
     name: "Alice Johnson",
     location: "New York, USA",
-    image: "https://randomuser.me/api/portraits/women/1.jpg",
+    image: "https://randomuser.me/api/portraits/women/5.jpg",
     message:
       "This service is amazing! I was able to rent everything I needed quickly and easily.",
   },
   {
     name: "John Smith",
     location: "London, UK",
-    image: "https://randomuser.me/api/portraits/men/2.jpg",
+    image: "https://randomuser.me/api/portraits/men/10.jpg",
     message: "Highly recommend! Smooth experience from start to finish.",
   },
   {
@@ -26,7 +26,7 @@ const testimonials = [
   {
     name: "Ahmed Khan",
     location: "Lahore, Pakistan",
-    image: "https://randomuser.me/api/portraits/men/4.jpg",
+    image: "https://randomuser.me/api/portraits/men/18.jpg",
     message: "Great support and really convenient. Loved it!",
   },
 ];
@@ -35,21 +35,24 @@ const TestimonialSection = () => {
   return (
     <div className="py-16 px-4 bg-white flex flex-col items-center">
       {/* Top Quote */}
-      <blockquote className="text-center text-xl sm:text-2xl font-semibold max-w-2xl mb-10 text-gray-700 italic">
+      <blockquote className="text-center text-xl sm:text-3xl font-semibold max-w-2xl mb-10 text-gray-700 italic">
         “We don't just rent products, We build Relationships!”
       </blockquote>
 
       {/* Slider Container */}
-      <div className="w-full max-w-4xl md:w-3/5">
+      <div className="w-4/5 max-w-3xl md:w-3/5">
         <Swiper
-          modules={[Autoplay, Navigation]}
+          modules={[Autoplay]}
           spaceBetween={20}
-          slidesPerView={2}
           loop={true}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
+          }}
+          breakpoints={{
+            320: { slidesPerView: 1 },
+            640: { slidesPerView: 2 },
           }}
         >
           {testimonials.map((testimonial, index) => (

@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { cartState } from "../features/Cart/CartSlice";
 import { Link } from "react-router-dom";
-const Header = () => {
+import { useState } from "react";
+const Header = ({ setInputFocus }) => {
   const dispatch = useDispatch();
   const { cartItems } = useSelector((store) => store.cart);
   return (
@@ -16,7 +17,10 @@ const Header = () => {
         Easly Rented
       </Link>
       <span className="flex space-x-3 items-center">
-        <i className="fa-solid fa-magnifying-glass cursor-pointer hover:text-blue-50 ease-in"></i>
+        <i
+          className={`fa-solid fa-magnifying-glass cursor-pointer hover:text-blue-50 ease-in`}
+          onClick={() => setInputFocus(true)}
+        ></i>
         <span>
           <i
             className="fa-solid fa-bag-shopping cursor-pointer hover:text-blue-50 ease-in relative"

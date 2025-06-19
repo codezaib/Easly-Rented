@@ -2,7 +2,7 @@ import Card from "./Minor/Card";
 
 const CardsSection = () => {
   return (
-    <div className="flex flex-col md:flex-row gap-6 items-center justify-center py-6 px-8 my-[50px]">
+    <div className="flex flex-col md:flex-row gap-6 items-center justify-center py-6 px-[70px] my-[50px]">
       <Card
         image="https://placehold.co/300x200"
         title="Card One"

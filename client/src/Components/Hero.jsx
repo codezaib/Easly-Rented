@@ -1,17 +1,26 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import bike from "../assets/images/bike.jpg";
 import books from "../assets/images/books.jpg";
 import camera from "../assets/images/camera.jpg";
 import pet from "../assets/images/pet.jpg";
+import { useOutletContext } from "react-router-dom";
 const Hero = () => {
   const images = [bike, books, camera, pet];
   const [imageIndex, setImageIndex] = useState(0);
+  const { inputFocus } = useOutletContext();
+  const inputBox = useRef(null);
+  console.log(inputFocus);
   useEffect(() => {
     const interval = setInterval(() => {
       setImageIndex((prev) => (prev + 1) % images.length);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+  useEffect(() => {
+    if (inputFocus && inputBox.current) {
+      inputBox.current.focus();
+    }
+  }, [inputFocus]);
   return (
     <div className="realtive h-screen">
       {images.map((img, idx) => (
@@ -28,7 +37,7 @@ const Hero = () => {
         <h1 className="text-amber-50 text-5xl md:text-6xl text-wrap text-center">
           Why buy when you can Rent Anything?
         </h1>
-        <div className="flex bg-amber-100 h-[40px] w-full leading-[40px]">
+        <div className="flex bg-amber-100 h-[40px] w-full leading-[40px] focus-within">
           <span className="hidden md:block md:flex-[0.2] px-2 items-center">
             <i class="fa-solid fa-magnifying-glass-arrow-right"></i>
           </span>
@@ -36,7 +45,8 @@ const Hero = () => {
             type="text"
             placeholder="search for your rented item"
             name="search"
-            className="flex-[5] md:flex-[4.3] h-full px-2 outline-none"
+            ref={inputBox}
+            className={`flex-[5] md:flex-[4.3] h-full px-2 outline-none focus:ring-2`}
           />
           <select className="flex-[1] md:flex-[1.5] px-2 border-l-2 border-black-50 pr-2">
             <option value="Electronics">Electronics</option>
