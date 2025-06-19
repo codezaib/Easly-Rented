@@ -110,7 +110,7 @@ const FooterSection = () => {
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className="absolute bottom-5 cursor-pointer left-1/2 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition transform -translate-x-1/2"
+        className="absolute bottom-5 cursor-pointer right-3 md:left-1/2 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition transform -translate-x-1/2"
         // aria-label="Scroll to top"
       >
         <FiArrowUp size={20} />

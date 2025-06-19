@@ -9,9 +9,8 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    cartState: (state) => {
-      if (state.cartShown == false) state.cartShown = true;
-      else state.cartShown = false;
+    cartState: (state, { payload }) => {
+      state.cartShown = payload;
     },
     addToCart: (state, { payload }) => {
       state.cartItems = [...state.cartItems, payload];

@@ -7,9 +7,8 @@ import { useOutletContext } from "react-router-dom";
 const Hero = () => {
   const images = [bike, books, camera, pet];
   const [imageIndex, setImageIndex] = useState(0);
-  const { inputFocus } = useOutletContext();
+  const { inputFocus, setInputFocus } = useOutletContext();
   const inputBox = useRef(null);
-  console.log(inputFocus);
   useEffect(() => {
     const interval = setInterval(() => {
       setImageIndex((prev) => (prev + 1) % images.length);
@@ -37,29 +36,21 @@ const Hero = () => {
         <h1 className="text-amber-50 text-5xl md:text-6xl text-wrap text-center">
           Why buy when you can Rent Anything?
         </h1>
-        <div className="flex bg-amber-100 h-[40px] w-full leading-[40px] focus-within">
-          <span className="hidden md:block md:flex-[0.2] px-2 items-center">
-            <i class="fa-solid fa-magnifying-glass-arrow-right"></i>
+        <div className="flex items-center bg-white w-full h-10  overflow-hidden">
+          <span className="flex items-center justify-center px-3 text-black">
+            <i className="fa-solid fa-magnifying-glass-arrow-right"></i>
           </span>
+
           <input
             type="text"
-            placeholder="search for your rented item"
+            placeholder="Search for your rented item"
             name="search"
             ref={inputBox}
-            className={`flex-[5] md:flex-[4.3] h-full px-2 outline-none focus:ring-2`}
+            onBlur={() => setInputFocus(false)}
+            className="flex-grow px-3 h-full outline-none text-sm bg-transparent focus:ring-2 focus:ring-red-600"
           />
-          <select className="flex-[1] md:flex-[1.5] px-2 border-l-2 border-black-50 pr-2">
-            <option value="Electronics">Electronics</option>
-            <option value="Travel & Transport">Travel & Transport</option>
-            <option value="Event & Party Supplies">
-              Event & Party Supplies
-            </option>
-            <option value="Tools" selected>
-              Tools
-            </option>
-            <option value="Home & Lifestyle">Home & Lifestyle</option>
-          </select>
         </div>
+
         <div className="flex gap-x-4">
           <button className="h-auto px-4 py-2 text-amber-50 text-lg bg-red-700 cursor-pointer active:scale-90 transition-all ease-in">
             Rent Out
@@ -69,7 +60,7 @@ const Hero = () => {
           </button>
         </div>
       </div>
-      <button className="p-2 flex gap-x-3 items-center text-red-600 absolute left-6 bottom-6 z-20 cursor-pointer bg-amber-50 text-lg">
+      <button className="p-2 flex gap-x-3 items-center text-red-600 absolute left-6 bottom-6 z-20 cursor-pointer bg-amber-50 text-lg hidden md:block">
         Discover Items <i class="fa-solid fa-arrow-down"></i>
       </button>
     </div>

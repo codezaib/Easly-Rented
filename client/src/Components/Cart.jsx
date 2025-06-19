@@ -5,6 +5,7 @@ import { cartState } from "../features/Cart/CartSlice";
 const Cart = () => {
   const { cartItems } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+
   return (
     <div className="h-full w-[400px] bg-white px-4 py-2">
       <div className="flex justify-between items-center mb-[20px]">
@@ -18,7 +19,7 @@ const Cart = () => {
         </span>
         <i
           className="fa-solid fa-xmark cursor-pointer hover:text-red-600"
-          onClick={() => dispatch(cartState())}
+          onClick={() => dispatch(cartState(false))}
         ></i>
       </div>
       {cartItems.length > 0 ? <CartConatins /> : <CartEmpty />}

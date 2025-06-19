@@ -24,17 +24,15 @@ const categories = [
 const CategoriesSection = () => {
   return (
     <div className="px-8 py-10 max-w-screen-xl mx-auto">
-      {/* Top Heading + Button */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
-        <h2 className="text-4xl text-[#3a001e] font-bold ">
+      <div className="flex flex-col sm:flex-row items-center justify-between mb-6 gap-4 text-center sm:text-left">
+        <h2 className="text-4xl text-[#3a001e] font-bold w-full sm:w-auto">
           Top Rented Categories
         </h2>
-        <button className="bg-[#c10007] text-white px-4 py-2 rounded-lg cursor-pointer transition active:scale-95">
+        <button className="bg-[#c10007] text-white px-4 py-2 rounded-lg cursor-pointer transition active:scale-95  @min-[685px]:mx-auto sm:mx-0">
           Discover All Categories
         </button>
       </div>
 
-      {/* Grid of Categories */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 md:gap-[50px] gap-[30px]">
         {categories.map((category, index) => (
           <div
