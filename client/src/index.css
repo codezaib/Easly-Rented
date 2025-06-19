@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@font-face {
+  font-family: "Nunito";
+  src: url("./src/assets/fonts/Nunito-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Julius";
+  src: url("./src/assets/fonts/WorkSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  font-family: "Julius";
+}
+.font-Nunito {
+  font-family: "Nunito";
+}
+.scroll-lock {
+  position: fixed;
+  left: 0;
+  right: 0;
+  overflow-y: scroll;
+  width: 100%;
+}
+.cartTotal::after {
+  content: "Taxes and shipping calculated at checkout";
+  font-size: 0.7rem;
+  position: absolute;
+  left: 4px;
+  bottom: -20px;
+}
