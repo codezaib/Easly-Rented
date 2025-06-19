@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const Categories = () => {
+const CategoriesSlider = () => {
   const imagePath = "/categories/";
   const images = [
     "baby.png",
@@ -34,7 +34,7 @@ const Categories = () => {
   }, []);
 
   return (
-    <div className="w-full overflow-hidden p-3 bg-white">
+    <div className="w-full overflow-hidden p-3 bg-white my-[30px]">
       <div
         className="flex gap-x-5 w-max overflow-x-hidden transition-transform duration-700 ease-in-out"
         style={{
@@ -45,14 +45,14 @@ const Categories = () => {
         {extendedImages.map((image, index) => (
           <div
             key={index}
-            className="flex flex-col items-center gap-y-1.5 w-[120px] min-w-[120px] cursor-pointer flex-shrink-0"
+            className="group flex flex-col items-center gap-y-1.5 w-[120px] min-w-[120px] cursor-pointer flex-shrink-0"
           >
             <img
               src={`${imagePath}${image}`}
               alt={image}
               className="w-12 h-12 object-contain"
             />
-            <h3 className="text-lg font-extralight transition-all ease-in">
+            <h3 className="text-[16px] font-extralight transition-all ease-in group-hover:text-[17px]">
               {image.replace(".png", "").charAt(0).toUpperCase() +
                 image.replace(".png", "").slice(1)}
             </h3>
@@ -63,4 +63,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default CategoriesSlider;

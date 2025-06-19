@@ -1,12 +1,18 @@
 import React from "react";
 import Hero from "../../Components/Hero";
-import Categories from "../../Components/Categories";
+import CategoriesSlider from "../../Components/CategoriesSlider";
+import CardsSection from "../../Components/CardsSection";
+import CategoriesSection from "../../Components/CategoriesSection";
+import TestimonialSection from "../../Components/TestimonialSection";
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <Categories />
+      <CategoriesSlider />
+      <CardsSection />
+      <CategoriesSection />
+      <TestimonialSection />
     </>
   );
 };

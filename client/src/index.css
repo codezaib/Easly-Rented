@@ -17,6 +17,9 @@
 .font-Nunito {
   font-family: "Nunito";
 }
+.bg-btn {
+  background-color: #2f4858;
+}
 .scroll-lock {
   position: fixed;
   left: 0;
