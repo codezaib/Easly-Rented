@@ -3,7 +3,9 @@ import { cartState } from "../features/Cart/CartSlice";
 import { Link } from "react-router-dom";
 import DropdownMenu from "./DropDownMenu";
 import { useEffect, useState, useRef } from "react";
-const Header = ({ setInputFocus }) => {
+import { AnimatePresence } from "motion/react";
+import { BsHandbag } from "react-icons/bs";
+const Header = ({ setOpenSearch }) => {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
   const { cartItems } = useSelector((store) => store.cart);
@@ -24,7 +26,11 @@ const Header = ({ setInputFocus }) => {
         onClick={() => setIsOpen((prev) => !prev)}
       >
         <i className={`fa-solid fa-bars-staggered`}></i>
-        <div ref={menuRef}>{isOpen && <DropdownMenu />}</div>
+        <div ref={menuRef}>
+          <AnimatePresence mode="wait">
+            {isOpen && <DropdownMenu />}
+          </AnimatePresence>
+        </div>
       </div>
       <Link
         to={"/"}
@@ -35,17 +41,16 @@ const Header = ({ setInputFocus }) => {
       <span className="flex space-x-3 items-center">
         <i
           className={`fa-solid fa-magnifying-glass cursor-pointer hover:text-blue-50 ease-in`}
-          onClick={() => setInputFocus(true)}
+          onClick={() => setOpenSearch(true)}
         ></i>
-        <span>
-          <i
-            className="fa-solid fa-bag-shopping cursor-pointer hover:text-blue-50 ease-in relative"
-            onClick={(e) => {
-              e.stopPropagation();
-              dispatch(cartState(true));
-            }}
-          ></i>
-          <p className="absolute top-3 right-1 z-10 text-shadow-amber-100 text-sm">
+        <span
+          onClick={(e) => {
+            e.stopPropagation();
+            dispatch(cartState(true));
+          }}
+        >
+          <BsHandbag className="cursor-pointer hover:text-blue-50 ease-in relative" />
+          <p className="absolute top-3 right-1 z-10 text-red-800 bg-white h-4 w-4 rounded-full text-xs text-center ">
             {cartItems.length > 0 && cartItems.length}
           </p>
         </span>

@@ -1,8 +1,10 @@
 import InputNumber from "./InputNumber";
 import bike from "../../assets/images/bike.jpg";
-import { useSelector } from "react-redux";
-const CartConatins = () => {
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+const CartConatins = ({ cartState }) => {
   const { cartItems } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
   return (
     <div className="h-full flex flex-col ">
       <div className="flex flex-col gap-y-2 h-4/6 overflow-y-scroll">
@@ -36,13 +38,21 @@ const CartConatins = () => {
         <large className="text-lg">Total</large>
         <large className="text-lg">$24.5 USD</large>
       </div>
-      <div className="flex gap-x-1 mt-6">
-        <button className="w-1/2 h-[50px] leading-[50px] text-center text-xl rounded border-2 border-black cursor-pointer">
+      <div className="flex gap-x-1 mt-8">
+        <Link
+          to={"cart"}
+          onClick={() => dispatch(cartState(false))}
+          className="w-1/2 h-[45px] leading-[45px] text-center text-xl rounded border-1 border-black cursor-pointer"
+        >
           Go to Cart
-        </button>
-        <button className="w-1/2 h-[50px] leading-[50 cursor-pointerpx] text-center rounded text-xl text-amber-50 bg-slate-900  cursor-pointer">
+        </Link>
+        <Link
+          onClick={() => dispatch(cartState(false))}
+          to={"checkout"}
+          className="w-1/2 h-[45px] leading-[45px] text-center rounded text-xl text-amber-50 bg-slate-900  cursor-pointer"
+        >
           Checkout
-        </button>
+        </Link>
       </div>
     </div>
   );

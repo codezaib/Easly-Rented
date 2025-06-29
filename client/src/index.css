@@ -1,21 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
-@font-face {
+/* @font-face {
   font-family: "Nunito";
   src: url("./src/assets/fonts/Nunito-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-}
-@font-face {
+} */
+/* @font-face {
   font-family: "Julius";
   src: url("./src/assets/fonts/WorkSans-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-}
+} */
 * {
-  font-family: "Julius";
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  scroll-behavior: smooth;
 }
 .font-Nunito {
-  font-family: "Nunito";
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
 }
 .bg-btn {
   background-color: #2f4858;

@@ -3,23 +3,16 @@ import bike from "../assets/images/bike.jpg";
 import books from "../assets/images/books.jpg";
 import camera from "../assets/images/camera.jpg";
 import pet from "../assets/images/pet.jpg";
-import { useOutletContext } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Hero = () => {
   const images = [bike, books, camera, pet];
   const [imageIndex, setImageIndex] = useState(0);
-  const { inputFocus, setInputFocus } = useOutletContext();
-  const inputBox = useRef(null);
   useEffect(() => {
     const interval = setInterval(() => {
       setImageIndex((prev) => (prev + 1) % images.length);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
-  useEffect(() => {
-    if (inputFocus && inputBox.current) {
-      inputBox.current.focus();
-    }
-  }, [inputFocus]);
   return (
     <div className="realtive h-screen">
       {images.map((img, idx) => (
@@ -45,24 +38,31 @@ const Hero = () => {
             type="text"
             placeholder="Search for your rented item"
             name="search"
-            ref={inputBox}
-            onBlur={() => setInputFocus(false)}
             className="flex-grow px-3 h-full outline-none text-sm bg-transparent focus:ring-2 focus:ring-red-600"
           />
         </div>
 
         <div className="flex gap-x-4">
-          <button className="h-auto px-4 py-2 text-amber-50 text-lg bg-red-700 cursor-pointer active:scale-90 transition-all ease-in">
+          <Link
+            to={"/account/login"}
+            className="h-auto px-4 py-2 text-amber-50 text-lg bg-red-700 cursor-pointer active:scale-90 transition-all ease-in"
+          >
             Rent Out
-          </button>
-          <button className="h-auto px-3 py-2 text-amber-50 text-lg bg-red-700 cursor-pointer active:scale-90 transition-all ease-in">
+          </Link>
+          <Link
+            to={"/categories"}
+            className="h-auto px-3 py-2 text-amber-50 text-lg bg-red-700 cursor-pointer active:scale-90 transition-all ease-in"
+          >
             Rent Now
-          </button>
+          </Link>
         </div>
       </div>
-      <button className="p-2 flex gap-x-3 items-center text-red-600 absolute left-6 bottom-6 z-20 cursor-pointer bg-amber-50 text-lg hidden md:block">
+      <a
+        href="#categories"
+        className="p-2  flex gap-x-3 items-center text-red-600 absolute left-6 bottom-6 z-20 cursor-pointer bg-amber-50 text-lg hidden md:block"
+      >
         Discover Items <i class="fa-solid fa-arrow-down"></i>
-      </button>
+      </a>
     </div>
   );
 };

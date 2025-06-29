@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import CartConatins from "./Minor/CartConatins";
-import CartEmpty from "./Minor/CartEmpty";
+import CartConatins from "./home/CartConatins";
+import CartEmpty from "./home/CartEmpty";
 import { cartState } from "../features/Cart/CartSlice";
 const Cart = () => {
   const { cartItems } = useSelector((state) => state.cart);
@@ -22,7 +22,11 @@ const Cart = () => {
           onClick={() => dispatch(cartState(false))}
         ></i>
       </div>
-      {cartItems.length > 0 ? <CartConatins /> : <CartEmpty />}
+      {cartItems.length > 0 ? (
+        <CartConatins cartState={cartState} />
+      ) : (
+        <CartEmpty />
+      )}
     </div>
   );
 };

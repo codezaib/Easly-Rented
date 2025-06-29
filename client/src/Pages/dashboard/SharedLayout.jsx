@@ -2,25 +2,31 @@ import { Outlet } from "react-router-dom";
 import Header from "../../Components/Header";
 import FooterSection from "../../Components/FooterSection";
 import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import CartContainer from "../../Components/CartContainer";
+import SearchSection from "../../Components/SearchSection";
+import { AnimatePresence } from "framer-motion";
 const SharedLayout = () => {
   const { cartShown } = useSelector((store) => store.cart);
-  const [inputFocus, setInputFocus] = useState(false);
-
+  const [openSearch, setOpenSearch] = useState(false);
   useEffect(() => {
-    if (cartShown) {
+    if (cartShown || openSearch) {
       document.body.style.overflowY = "clip";
     } else {
       document.body.style.overflow = "auto";
     }
-  }, [cartShown]);
+  }, [cartShown, openSearch]);
   return (
     <div>
-      <Header setInputFocus={setInputFocus} />
-      <CartContainer />
-      <Outlet context={{ inputFocus, setInputFocus }} />
+      <Header setOpenSearch={setOpenSearch} />
+      <AnimatePresence mode="wait">
+        {cartShown && <CartContainer />}
+      </AnimatePresence>
+      <Outlet />
       <FooterSection />
+      <AnimatePresence mode="wait">
+        {openSearch && <SearchSection onClose={() => setOpenSearch(false)} />}
+      </AnimatePresence>
     </div>
   );
 };

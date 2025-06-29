@@ -1,18 +1,18 @@
-import Card from "./Minor/Card";
+import Card from "./home/Card";
 
 const CardsSection = () => {
   return (
     <div className="flex flex-col md:flex-row gap-6 items-center justify-center py-6 px-[70px] my-[50px]">
       <Card
         image="https://placehold.co/300x200"
-        title="Card One"
-        description="This is a short description for the first card."
+        title="Easly list your products for rent"
+        description="Safe and Secured process for renting"
         btn="Give on Rent"
       />
       <Card
         image="https://placehold.co/300x200"
-        title="Card Two"
-        description="This is a short description for the second card."
+        title="Easily take things on rent"
+        description="Safe and Secured process for renting"
         btn="Take on Rent"
       />
     </div>
