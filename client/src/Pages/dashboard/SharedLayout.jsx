@@ -1,11 +1,12 @@
 import { Outlet } from "react-router-dom";
 import Header from "../../Components/Header";
 import FooterSection from "../../Components/FooterSection";
-import { useSelector } from "react-redux";
-import { useEffect, useState, useRef } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
 import CartContainer from "../../Components/CartContainer";
 import SearchSection from "../../Components/SearchSection";
 import { AnimatePresence } from "framer-motion";
+import { getUser } from "../../features/User/UserSlice";
 const SharedLayout = () => {
   const { cartShown } = useSelector((store) => store.cart);
   const [openSearch, setOpenSearch] = useState(false);
@@ -16,6 +17,10 @@ const SharedLayout = () => {
       document.body.style.overflow = "auto";
     }
   }, [cartShown, openSearch]);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getUser());
+  }, []);
   return (
     <div>
       <Header setOpenSearch={setOpenSearch} />

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ product, categoryName, subCategoryName }) => {
   return (
     <Link
-      to={`/rent-category/${categoryName}/${
+      to={`/rented-category/${categoryName}/${
         subCategoryName ? subCategoryName + "/" : ""
       }${product["name"].replaceAll(" ", "-")}`}
       key={product.id}

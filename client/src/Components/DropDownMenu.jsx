@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "motion/react";
+import { useSelector } from "react-redux";
 const categories = [
   {
     name: "Electronics",
@@ -22,6 +23,8 @@ const categories = [
 ];
 
 const DropdownMenu = () => {
+  const navigate = useNavigate();
+  const { user, isFetched } = useSelector((store) => store.user);
   return (
     <motion.div
       initial={{ scaleY: 0 }}
@@ -43,7 +46,7 @@ const DropdownMenu = () => {
 
       <div className="flex items-center justify-between text-sm border-t border-gray-200 h-auto">
         <Link
-          to={"account/login"}
+          to={`${user && isFetched ? "/account" : "account/login"}`}
           className="flex-1 text-center py-2 text-slate-900 hover:text-[#c10007]"
         >
           My Account

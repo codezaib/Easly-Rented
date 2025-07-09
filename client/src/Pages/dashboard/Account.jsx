@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { LiaAngleDownSolid, LiaAngleUpSolid } from "react-icons/lia";
-
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../../features/User/UserSlice";
+import { useNavigate } from "react-router-dom";
 const menuItems = [
   { key: "account", label: "Account Details" },
   { key: "products", label: "List Products for Rent" },
@@ -12,8 +14,15 @@ const menuItems = [
 
 const AccountPage = () => {
   const [activeTab, setActiveTab] = useState("account");
+  const { user } = useSelector((store) => store.user);
   const [showAddressForm, setShowAddressForm] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    await dispatch(logout()).unwrap();
+    navigate("/");
+  };
   const renderComponent = () => {
     switch (activeTab) {
       case "account":
@@ -23,21 +32,27 @@ const AccountPage = () => {
             <input
               type="text"
               placeholder="Full Name"
+              defaultValue={user && user.name}
+              contentEditable={true}
               className="border p-2 w-full rounded"
             />
             <input
               type="email"
+              defaultValue={user && user.email}
               placeholder="Email Address"
               className="border p-2 w-full rounded"
             />
-            <input
-              type="password"
-              placeholder="Password"
-              className="border p-2 w-full rounded"
-            />
-            <button className="py-2 px-3 rounded-md bg-[#fff5f1] text-[#c10007] cursor-pointer transition-all ease active:scale-95">
-              Update Info
-            </button>
+            <span className="flex flex-wrap gap-x-2">
+              <button className="py-2 px-3 rounded-md bg-[#fff5f1] text-[#c10007] cursor-pointer transition-all ease active:scale-95">
+                Update Info
+              </button>
+              <button
+                className="py-2 px-3 rounded-md bg-[#fff5f1] text-[#c10007] cursor-pointer transition-all ease active:scale-95"
+                onClick={() => handleLogout()}
+              >
+                logout
+              </button>
+            </span>
           </div>
         );
       case "products":

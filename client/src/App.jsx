@@ -19,16 +19,16 @@ const App = () => {
           <Route path="customer-support" element={<Contact />} />
           <Route path="categories" element={<Categories />} />
           <Route
-            path="rent-category/:categoryName/:subCategoryName/:productName"
+            path="rented-category/:categoryName/:subCategoryName/:productName"
+            element={<ProductPage />}
+          />
+          <Route
+            path="rented-category/:categoryName/:productName"
             element={<ProductPage />}
           />
           <Route
             path="rent-category/:categoryName/:subCategoryName"
             element={<ProductsSection />}
-          />
-          <Route
-            path="rent-category/:categoryName/:productName"
-            element={<ProductPage />}
           />
           <Route
             path="rent-category/:categoryName"
