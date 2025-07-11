@@ -19,7 +19,8 @@ const BreadCrumb = () => {
   const breadcrumb = [
     { name: "Home", to: "/" },
     ...displaySegments.map((seg, i) => {
-      const displayName = seg
+      const decoded = decodeURIComponent(seg);
+      const displayName = decoded
         .split("-")
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(" ");

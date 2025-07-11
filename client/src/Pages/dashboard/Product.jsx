@@ -27,10 +27,10 @@ export default function ProductPage() {
     <div className="px-10 py-15 space-y-10">
       <BreadCrumb />
       <div className="grid md:grid-cols-2 gap-10">
-        <div className="p-2">
+        <div className="md:p-2">
           <img
             src={product.image}
-            className="rounded-xl object-cover w-full h-auto"
+            className="rounded-xl object-cover w-full max-h-[460px]"
           />
         </div>
 

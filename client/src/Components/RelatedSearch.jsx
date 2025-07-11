@@ -26,7 +26,7 @@ const products = [
 
 const RelatedSearch = () => {
   return (
-    <div className="w-[200px] px-2 py-3 overflow-scroll overflow-x-hidden bg-white flex flex-col gap-y-1 hidden md:block">
+    <div className="w-[200px] px-2 py-3 overflow-scroll overflow-x-hidden bg-white hidden flex flex-col gap-y-1 md:block">
       <h2 className="text-lg font-bold mb-6 text-slate-900">
         Related Products
       </h2>
