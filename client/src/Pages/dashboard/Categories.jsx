@@ -1,16 +1,25 @@
-import { useState } from "react";
-import { categories } from "../../utils/data";
+import { act, useEffect, useState } from "react";
 import BreadCrumb from "../../Components/minor/BreadCrumb";
-import { Link } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
+import { getSubCategories } from "../../features/Category/CategorySlice";
+import SubCard from "../../Components/minor/SubCard";
+import PicLoader from "../../Components/minor/PicLoader";
 export default function Categories() {
+  const { categories, subcategories } = useSelector(
+    (store) => store.categories
+  );
+  const [picLoading, setPicLoading] = useState(true);
   const [activeIndx, setActiveIndx] = useState(0);
-  const active = categories[activeIndx];
+  const active = categories.length && categories[activeIndx];
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getSubCategories(active.id));
+  }, [active]);
   return (
     <div className="min-h-screen flex flex-col mt-10">
       <BreadCrumb />
       <div className="flex flex-1 flex-col md:flex-row">
-        <aside className="w-[calc(100%-50px)] md:w-48 max-h-[500px] bg-white overflow-x-scroll md:overflow-y-scroll md:overflow-hidden mx-auto md:sticky md:top-0">
+        <aside className="w-[calc(100%-50px)] md:w-48 max-h-[500px] overflow-x-scroll md:overflow-y-scroll md:overflow-hidden mx-auto md:sticky md:top-0">
           <ul className="w-full mb-2 flex md:flex-col">
             {categories.map((cat, i) => (
               <li
@@ -19,7 +28,7 @@ export default function Categories() {
                 className={`cursor-pointer px-4 py-3 text-sm transition
                 ${
                   i === activeIndx
-                    ? "bg-blue-50 text-blue-700 font-semibold"
+                    ? "bg-gray-50 text-[#c10007] font-semibold"
                     : "hover:bg-gray-100"
                 }`}
               >
@@ -31,14 +40,29 @@ export default function Categories() {
 
         <main className="flex-1 p-6">
           {/* Image */}
-          <div className="mb-6">
+          <div className="mb-6 relative w-full h-64 rounded-xl overflow-hidden">
+            {picLoading && <PicLoader height={256} />}
+
             <img
-              src={
-                active.img || `https://placehold.co/500x300?text=${active.name}`
-              }
+              src={`images/${active.name}.avif`}
               alt={active.name}
-              className="w-full max-h-64 object-cover rounded-lg shadow"
+              loading="lazy"
+              onLoad={() => setPicLoading(false)}
+              className={`transition-opacity duration-500 ease-in-out w-full h-full object-cover rounded-xl shadow-md filter brightness-50 ${
+                picLoading
+                  ? "opacity-0 absolute top-0 left-0"
+                  : "opacity-100 relative"
+              }`}
             />
+
+            {/* Centered category name */}
+            {!picLoading && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <h2 className="text-white text-3xl font-semibold tracking-wide drop-shadow-lg">
+                  {active.name}
+                </h2>
+              </div>
+            )}
           </div>
 
           {/* Sub‑categories */}
@@ -46,21 +70,8 @@ export default function Categories() {
             Subcategories of {active.name}
           </h2>
           <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(150px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(250px,1fr))] mb-6">
-            {active["subs"].map((sub) => (
-              <Link
-                to={`/rent-category/${active.name}/${sub}`}
-                key={sub}
-                className="block bg-white text-center text-md space-y-2
-                         hover:-translate-y-1 hover: transition"
-              >
-                <img
-                  src={`https://placehold.co/300x200?text=${sub}`}
-                  alt={sub}
-                  className="w-full object-cover rounded-md"
-                />
-                <big>{sub}</big>
-              </Link>
-            ))}
+            {subcategories.length &&
+              subcategories.map((sub) => <SubCard active={active} sub={sub} />)}
           </div>
         </main>
       </div>

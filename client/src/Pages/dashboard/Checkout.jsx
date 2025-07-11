@@ -126,7 +126,7 @@ export default function CheckoutPage() {
         </div>
 
         {/* Payment Section */}
-        <div className="relative space-y-4 bg-gray-50 p-4 rounded-md">
+        <div className="relative space-y-4 bg-white p-4 rounded-md">
           <h2 className="text-xl font-semibold">Payment</h2>
 
           {/* Credit Card Option */}
@@ -193,7 +193,7 @@ export default function CheckoutPage() {
       </form>
       {/* Right Section - 40% */}
       <div
-        className={`w-full md:w-2/5 md:h-screen md:sticky md:top-0 bg-gray-50 px-6 pt-6 ${
+        className={`w-full md:w-2/5 md:h-screen md:sticky md:top-0 bg-white px-6 pt-6 ${
           showCart && "pb-6"
         } md:p-6 flex flex-col justify-between`}
       >

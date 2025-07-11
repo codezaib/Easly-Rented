@@ -8,10 +8,10 @@ const {
 const uploadImage = require("../utils/uploadImage");
 
 const list = async (req, res, next) => {
-  const [rows] = await pool.query(`
-      SELECT s.*, c.name AS category
-      FROM subcategory s
-      JOIN category c ON s.category_id = ${req.params.id}`);
+  const [rows] = await pool.query(
+    `SELECT * FROM subcategory WHERE category_id = ?`,
+    [req.params.id]
+  );
   if (!rows) throw BadRequestError("couldn't get subcategories");
   res.status(StatusCodes.OK).json({ data: rows });
 };

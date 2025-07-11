@@ -7,7 +7,11 @@ const {
 } = require("../middlewares/authentication");
 const router = Router();
 
-router.get("/allProducts", productController.getAllProducts);
+router.get(
+  "/allProducts",
+  [authenticateUser, authorizePermissions("admin")],
+  productController.getAllProducts
+);
 router.get(
   "/:id",
   [authenticateUser, authorizePermissions("admin", "user")],
@@ -28,11 +32,7 @@ router.delete(
   [authenticateUser, authorizePermissions("admin", "user")],
   productController.deleteProduct
 );
-router.post(
-  "/sortproducts",
-  [authenticateUser, authorizePermissions("admin", "user")],
-  productController.sortProducts
-);
+router.post("/sortproducts", productController.sortProducts);
 router.get(
   "/list/user",
   [authenticateUser, authorizePermissions("admin", "user")],

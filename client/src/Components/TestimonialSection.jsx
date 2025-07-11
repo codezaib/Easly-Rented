@@ -58,7 +58,7 @@ const TestimonialSection = () => {
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
               <div className="w-full h-full overflow-hidden rounded-xl">
-                <div className="bg-gray-50 shadow-md rounded-xl p-6 flex flex-col items-center text-center">
+                <div className="bg-[#fffafa] shadow-md rounded-xl p-6 flex flex-col items-center text-center">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}

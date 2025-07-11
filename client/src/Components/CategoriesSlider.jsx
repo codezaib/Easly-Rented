@@ -34,7 +34,7 @@ const CategoriesSlider = () => {
   }, []);
 
   return (
-    <div className="w-full overflow-hidden p-3 bg-white my-[30px]">
+    <div className="w-full overflow-hidden p-3 my-[30px]">
       <div
         className="flex gap-x-5 w-max overflow-x-hidden transition-transform duration-700 ease-in-out"
         style={{

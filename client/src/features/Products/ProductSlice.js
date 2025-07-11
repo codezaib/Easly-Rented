@@ -22,11 +22,17 @@ export const deleteProduct = createAsyncThunk(
   }
 );
 export const getProducts = createAsyncThunk(
-  "product/updateProduct",
-  async (product, thunkApi) => {
+  "product/sorted",
+  async (obj, thunkApi) => {
     try {
-      const {data: result} = await customFetch.get('/product/sortproducts')
-    } catch (error) {}
+      const { data: result } = await customFetch.post(
+        "/product/sortproducts",
+        obj
+      );
+      return result.data;
+    } catch (error) {
+      console.log(error);
+    }
   }
 );
 const initialState = {
@@ -57,8 +63,8 @@ const productSlice = createSlice({
         state.products = payload;
       })
       .addCase(getProducts.pending, (state) => {
-        state.isFetched = true;
-        state.isLoading = false;
+        state.isFetched = false;
+        state.isLoading = true;
       })
       .addCase(getProducts.rejected, (state) => {
         state.isFetched = true;

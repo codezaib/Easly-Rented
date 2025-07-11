@@ -1,64 +1,72 @@
-import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLocation, useParams } from "react-router-dom";
 import { FaLock, FaCheckCircle, FaUserShield, FaUndo } from "react-icons/fa";
 import ProductCard from "../../Components/minor/ProductCard";
-
-const relatedProducts = [
-  { id: 1, name: "Study Table", image: "/table.jpg" },
-  { id: 2, name: "Bookshelf", image: "/bookshelf.jpg" },
-  { id: 3, name: "Laptop", image: "/laptop.jpg" },
-  { id: 4, name: "Air Conditioner", image: "/ac.jpg" },
-];
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../../features/Products/ProductSlice";
+import BreadCrumb from "../../Components/minor/BreadCrumb";
 
 export default function ProductPage() {
   const [quantity, setQuantity] = useState(1);
-  const { categoryName, subCategoryName } = useParams();
-
+  const [duration, setDuration] = useState(1);
+  const { categoryName, subCategoryName, category_id } = useParams();
+  const location = useLocation();
+  const { product } = location.state || {};
+  const dispatch = useDispatch();
+  const { products, isLoading } = useSelector((store) => store.products);
+  useEffect(() => {
+    (async function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      await dispatch(getProducts({ category_id })).unwrap();
+    })();
+  }, [product]);
+  const relatedProducts = Array.isArray(products)
+    ? products.filter((pro) => pro.id !== product.id)
+    : [];
   return (
     <div className="px-10 py-15 space-y-10">
+      <BreadCrumb />
       <div className="grid md:grid-cols-2 gap-10">
-        <div className="border rounded-xl p-4">
-          <img src={relatedProducts.image} className="object-cover" />
+        <div className="p-2">
+          <img
+            src={product.image}
+            className="rounded-xl object-cover w-full h-auto"
+          />
         </div>
 
         <div className="flex flex-col space-y-6">
-          <h1 className="text-3xl font-bold">Premium Office Chair</h1>
+          <h1 className="text-3xl font-bold">{product.name}</h1>
 
           <div className="p-4 rounded-md space-y-2 bg-gray-100">
             <div>
-              <label className="font-semibold mb-3">Select Duration:</label>
-              <select className="p-1 w-full border border-gray-600 rounded">
-                <option>1 Month</option>
-                <option>3 Months</option>
-                <option>6 Months</option>
-              </select>
-            </div>
-
-            <div>
               <p className="font-semibold mb-3">
                 Price per Duration:{" "}
-                <span className="text-blue-600">Rs 2500</span>
+                <span className="text-[#c10007]">$ {product.price}</span>
               </p>
             </div>
 
             <div>
               <span className="flex gap-x-3 items-center">
                 <label className="font-semibold">Duration Type:</label>
-                <input type="radio" checked name={"days"} />
-                <label for="days">days</label>
+                <input type="radio" checked name={product.duration_type} />
+                <label for={product.duration_type}>
+                  {product.duration_type}
+                </label>
               </span>
               <div>
-                <label className="font-semibold mb-3">Days:</label>
+                <label className="font-semibold mb-3">
+                  {product.duration_type}:
+                </label>
                 <div className="flex items-center space-x-4">
                   <button
-                    onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                    onClick={() => setDuration((d) => Math.max(1, d - 1))}
                     className="px-3 py-1 bg-gray-200 rounded"
                   >
                     -
                   </button>
-                  <span>{quantity}</span>
+                  <span>{duration}</span>
                   <button
-                    onClick={() => setQuantity((q) => q + 1)}
+                    onClick={() => setDuration((d) => d + 1)}
                     className="px-3 py-1 bg-gray-200 rounded"
                   >
                     +
@@ -98,7 +106,8 @@ export default function ProductPage() {
 
             <div>
               <p>
-                <span className="font-semibold">Available in:</span> Lahore
+                <span className="font-semibold">Available in:</span>{" "}
+                {product.location}
               </p>
               <p>
                 <span className="font-semibold">Security Deposit:</span> Rs 1500
@@ -137,6 +146,7 @@ export default function ProductPage() {
             <ProductCard
               key={item.name}
               product={item}
+              category_id={category_id}
               categoryName={categoryName}
               subCategoryName={subCategoryName}
             />

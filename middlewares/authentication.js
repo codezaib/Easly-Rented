@@ -2,6 +2,7 @@ const { UnauthenticatedError } = require("../errors");
 const { verifyToken } = require("../utils/jwt");
 const authenticateUser = (req, res, next) => {
   const token = req.signedCookies.token;
+  console.log("hello");
   if (!token) {
     throw new UnauthenticatedError("Authentication Invalid");
   }

@@ -59,7 +59,7 @@ export default function CartPage() {
         </div>
 
         {/* Right: Summary */}
-        <div className="bg-gray-100 p-6 rounded-xl shadow flex flex-col justify-between h-fit">
+        <div className="bg-gray-50 p-6 rounded-xl shadow flex flex-col justify-between h-fit">
           <div>
             <h3 className="text-xl font-semibold mb-4">Summary</h3>
             <p className="text-gray-700">Total Items: {cartItems.length}</p>

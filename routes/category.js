@@ -7,11 +7,7 @@ const {
   authorizePermissions,
 } = require("../middlewares/authentication");
 
-router.get(
-  "/allCategories",
-  [authenticateUser, authorizePermissions("admin", "user")],
-  categoryController.list
-);
+router.get("/allCategories", categoryController.list);
 router.post(
   "/insert",
   // [authenticateUser, authorizePermissions("admin")],
@@ -27,14 +23,10 @@ router.delete(
   [authenticateUser, authorizePermissions("admin")],
   categoryController.remove
 );
-router.get(
-  "/allSubcategories",
-  [authenticateUser, authorizePermissions("admin")],
-  subCategoryController.list
-);
+router.get("/allSubcategories/:id", subCategoryController.list);
 router.post(
   "/create/subcategory/:id",
-  // [authenticateUser, authorizePermissions("admin")],
+  [authenticateUser, authorizePermissions("admin")],
   subCategoryController.create
 );
 router.patch(

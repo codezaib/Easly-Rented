@@ -1,54 +1,43 @@
-import { Link, useParams } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+  useParams,
+  useSearchParams,
+} from "react-router-dom";
 import BreadCrumb from "../../Components/minor/BreadCrumb";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProductCard from "../../Components/minor/ProductCard";
-const mockProducts = [
-  {
-    id: 1,
-    name: "iPhone 14 Pro",
-    price: 1200,
-    per: "month",
-    image: "https://placehold.co/250x200?text=iPhone+14",
-    category: "electronics",
-    subCategory: "smartphones",
-  },
-  {
-    id: 2,
-    name: "Samsung Galaxy S22",
-    price: 1000,
-    per: "month",
-    image: "https://placehold.co/250x200?text=Galaxy+S22",
-    category: "electronics",
-    subCategory: "smartphones",
-  },
-  {
-    id: 3,
-    name: "Canon DSLR Camera",
-    price: 250,
-    per: "day",
-    image: "https://placehold.co/250x200?text=Canon+DSLR",
-    category: "electronics",
-    subCategory: "cameras",
-  },
-  // Add more products as needed
-];
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../../features/Products/ProductSlice";
 
 const ProductsSection = () => {
-  const { categoryName, subCategoryName } = useParams();
+  const { categoryName, subCategoryName, category_id, subcategory_id } =
+    useParams();
+  const { products, isLoading } = useSelector((store) => store.products);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    (async function () {
+      let obj =
+        subcategory_id && category_id ? { subcategory_id } : { category_id };
+      await dispatch(getProducts(obj)).unwrap();
+    })();
+  }, [category_id, subcategory_id]);
   const [sort, setSort] = useState("default");
   const [tenure, setTenure] = useState("all");
-  const filtered = mockProducts.filter((product) => {
-    return subCategoryName
-      ? product.subCategory.toLowerCase() === subCategoryName.toLowerCase() &&
-          (tenure === "all" || product.per === tenure)
-      : product.category.toLowerCase() === categoryName.toLowerCase() &&
-          (tenure === "all" || product.per === tenure);
-  });
-  const sorted = [...filtered].sort((a, b) => {
-    if (sort === "price-asc") return a.price - b.price;
-    if (sort === "price-desc") return b.price - a.price;
-    return 0;
-  });
+  const filtered = Array.isArray(products)
+    ? products.filter(
+        (product) => tenure === "all" || product.duration_type === tenure
+      )
+    : [];
+
+  const sorted = filtered.length
+    ? [...filtered].sort((a, b) => {
+        if (sort === "price-asc") return a.price - b.price;
+        if (sort === "price-desc") return b.price - a.price;
+        return 0;
+      })
+    : [];
+
   return (
     <div className="max-w-screen-xl mx-auto px-6 py-15">
       <BreadCrumb />
@@ -68,11 +57,20 @@ const ProductsSection = () => {
           className="border rounded px-2 py-2 text-sm"
         >
           <option>Select Tenure</option>
-          <option value="day">Per Day</option>
-          <option value="month">Per Month</option>
+          <option value="days">Per Day</option>
+          <option value="months">Per Month</option>
         </select>
       </div>
-      {sorted.length === 0 ? (
+      {isLoading ? (
+        <div className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-6">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <div
+              key={i}
+              className="h-64 bg-gray-200 rounded-lg animate-pulse"
+            ></div>
+          ))}
+        </div>
+      ) : sorted.length === 0 ? (
         <p className="text-gray-600">No products found in this category.</p>
       ) : (
         <div className="grid gap-6 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-6">
@@ -81,8 +79,10 @@ const ProductsSection = () => {
               <ProductCard
                 key={product.name}
                 product={product}
+                category_id={category_id}
                 categoryName={categoryName}
                 subCategoryName={subCategoryName}
+                subcategory_id={subcategory_id}
               />
             );
           })}

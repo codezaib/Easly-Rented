@@ -1,12 +1,12 @@
 const axios = require("axios");
 const data = require("./utils/categories.json");
-async function dataToDB() {
-  for (let i = 123; i <= 180; i++) {
+data.forEach((cat) => {
+  return cat["subs"].forEach(async (sub) => {
     try {
       const { data } = await axios.patch(
-        `http://localhost:3000/api/v1/product/update/${i}`,
+        `http://localhost:3000/api/v1/category/update/subcategory/${sub.subcategory_id}`,
         {
-          product_location: "Lahore",
+          image: sub.products[1].image,
         }
       );
       if (!data) {
@@ -15,7 +15,5 @@ async function dataToDB() {
     } catch (error) {
       console.log(error);
     }
-  }
-}
-
-dataToDB();
+  });
+});

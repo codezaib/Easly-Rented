@@ -12,6 +12,9 @@
   font-weight: normal;
   font-style: normal;
 } */
+body {
+  background-color: #fffafa;
+}
 * {
   font-family: "Work Sans", sans-serif;
   font-optical-sizing: auto;

@@ -1,30 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "motion/react";
 import { useSelector } from "react-redux";
-const categories = [
-  {
-    name: "Electronics",
-    image: "https://placehold.co/100x100?text=Electronics",
-  },
-  { name: "Furniture", image: "https://placehold.co/100x100" },
-  { name: "Books", image: "https://placehold.co/100x100" },
-  { name: "Clothing", image: "https://placehold.co/100x100" },
-  { name: "Tools", image: "https://placehold.co/100x100" },
-  { name: "Sports", image: "https://placehold.co/100x100" },
-  { name: "Toys", image: "https://placehold.co/100x100" },
-  { name: "Kitchen", image: "https://placehold.co/100x100" },
-  { name: "Outdoors", image: "https://placehold.co/100x100" },
-  { name: "Music", image: "https://placehold.co/100x100" },
-  { name: "Photography", image: "https://placehold.co/100x100" },
-  { name: "Gaming", image: "https://placehold.co/100x100" },
-  { name: "Travel", image: "https://placehold.co/100x100" },
-  { name: "Health", image: "https://placehold.co/100x100" },
-  { name: "Pets", image: "https://placehold.co/100x100" },
-];
 
 const DropdownMenu = () => {
   const navigate = useNavigate();
   const { user, isFetched } = useSelector((store) => store.user);
+  const { categories } = useSelector((store) => store.categories);
   return (
     <motion.div
       initial={{ scaleY: 0 }}
@@ -36,7 +17,7 @@ const DropdownMenu = () => {
     >
       <ul className="text-gray-700 text-sm h-4/5 overflow-scroll overflow-x-hidden">
         {categories.map((category) => (
-          <Link to={`/rent-category/${category.name}`}>
+          <Link to={`/rent-category/${category.name}/${category.id}`}>
             <li className="hover:bg-gray-100 px-4 py-2 cursor-pointer">
               {category.name}
             </li>

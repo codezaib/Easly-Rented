@@ -146,19 +146,41 @@ const deleteProduct = async (req, res) => {
 
 const sortProducts = async (req, res) => {
   const { sortBy = "price", order = "asc", limit } = req.query;
-
+  const { category_id, subcategory_id } = req.body;
   const allowedFields = ["price", "name", "duration_time"];
   const allowedOrder = ["asc", "desc"];
-
   if (
     !allowedFields.includes(sortBy) ||
     !allowedOrder.includes(order.toLowerCase())
   ) {
     return res.status(400).json({ msg: "Invalid sorting parameters" });
   }
-
-  let query = `SELECT * FROM product ORDER BY ${sortBy} ${order.toUpperCase()}`;
+  let query = "SELECT * FROM product";
+  const conditions = [];
   const values = [];
+
+  if (category_id) {
+    const [subcategories] = await pool.execute(
+      `SELECT id FROM subcategory WHERE category_id = ?`,
+      [category_id]
+    );
+    const ids = subcategories.map((s) => s.id);
+    if (ids.length > 0) {
+      conditions.push(`subcategory_id IN (${ids.map(() => "?").join(",")})`);
+      values.push(...ids);
+    }
+  }
+
+  if (subcategory_id) {
+    conditions.push(`subcategory_id = ?`);
+    values.push(subcategory_id);
+  }
+
+  if (conditions.length > 0) {
+    query += " WHERE " + conditions.join(" AND ");
+  }
+
+  query += ` ORDER BY ${sortBy} ${order.toUpperCase()}`;
 
   if (limit && !isNaN(limit)) {
     query += " LIMIT ?";
@@ -166,8 +188,7 @@ const sortProducts = async (req, res) => {
   }
 
   const [rows] = await pool.execute(query, values);
-
-  res.status(StatusCodes.OK).json({ data: rows });
+  res.status(200).json({ data: rows });
 };
 
 module.exports = {

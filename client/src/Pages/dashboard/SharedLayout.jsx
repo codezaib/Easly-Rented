@@ -7,6 +7,7 @@ import CartContainer from "../../Components/CartContainer";
 import SearchSection from "../../Components/SearchSection";
 import { AnimatePresence } from "framer-motion";
 import { getUser } from "../../features/User/UserSlice";
+import { getCategories } from "../../features/Category/CategorySlice";
 const SharedLayout = () => {
   const { cartShown } = useSelector((store) => store.cart);
   const [openSearch, setOpenSearch] = useState(false);
@@ -20,6 +21,7 @@ const SharedLayout = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUser());
+    dispatch(getCategories());
   }, []);
   return (
     <div>
