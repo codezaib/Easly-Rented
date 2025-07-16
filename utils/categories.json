@@ -1,0 +1,872 @@
+[
+  {
+    "name": "Electronics",
+    "category_id": 1,
+    "subs": [
+      {
+        "name": "Smartphones",
+        "image": "smartphones.jpg",
+        "category_id": 1,
+        "subcategory_id": 160,
+        "products": [
+          {
+            "name": "Smartphones Product 1",
+            "description": "This is Smartphones Product 1 description.",
+            "price": 10,
+            "duration_type": "days",
+            "duration_time": 3,
+            "subcategory_id": 6,
+            "image": "https://images.unsplash.com/photo-1604671368394-2240d0b1bb6c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c21hcnRwaG9uZXN8ZW58MHx8MHx8fDA%3D"
+          },
+          {
+            "name": "Smartphones Product 2",
+            "description": "This is Smartphones Product 2 description.",
+            "price": 20,
+            "duration_type": "months",
+            "duration_time": 6,
+            "subcategory_id": 6,
+            "image": "https://images.unsplash.com/photo-1719945421298-f03d3d80c3e1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c21hcnRwaG9uZXN8ZW58MHx8MHx8fDA%3D"
+          }
+        ]
+      },
+      {
+        "name": "Laptops",
+        "image": "laptops.jpg",
+        "category_id": 1,
+        "subcategory_id": 165,
+        "products": [
+          {
+            "name": "Laptops Product 1",
+            "description": "This is Laptops Product 1 description.",
+            "price": 10,
+            "duration_type": "days",
+            "duration_time": 3,
+            "subcategory_id": 7,
+            "image": "https://plus.unsplash.com/premium_photo-1681566925246-cc584a44d7fe?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFwdG9wc3xlbnwwfHwwfHx8MA%3D%3D"
+          },
+          {
+            "name": "Laptops Product 2",
+            "description": "This is Laptops Product 2 description.",
+            "price": 20,
+            "duration_type": "months",
+            "duration_time": 6,
+            "subcategory_id": 7,
+            "image": "https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFwdG9wc3xlbnwwfHwwfHx8MA%3D%3D"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Furniture",
+    "category_id": 3,
+    "subs": [
+      {
+        "name": "Sofas",
+        "image": "sofas.jpg",
+        "category_id": 2,
+        "subcategory_id": 166,
+        "products": [
+          {
+            "name": "Sofas Product 1",
+            "description": "This is Sofas Product 1 description.",
+            "price": 10,
+            "duration_type": "months",
+            "duration_time": 3,
+            "subcategory_id": 12,
+            "image": "https://plus.unsplash.com/premium_photo-1674567529895-c89b6bb1b9e6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c29mYXN8ZW58MHx8MHx8fDA%3D"
+          },
+          {
+            "name": "Sofas Product 2",
+            "description": "This is Sofas Product 2 description.",
+            "price": 20,
+            "duration_type": "days",
+            "duration_time": 6,
+            "subcategory_id": 12,
+            "image": "https://images.unsplash.com/photo-1630585308572-f53438fc684f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c29mYXN8ZW58MHx8MHx8fDA%3D"
+          }
+        ]
+      },
+      {
+        "name": "Beds",
+        "image": "beds.jpg",
+        "category_id": 2,
+        "subcategory_id": 161,
+        "products": [
+          {
+            "name": "Beds Product 1",
+            "description": "This is Beds Product 1 description.",
+            "price": 10,
+            "duration_type": "months",
+            "duration_time": 3,
+            "subcategory_id": 13,
+            "image": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmVkc3xlbnwwfHwwfHx8MA%3D%3D"
+          },
+          {
+            "name": "Beds Product 2",
+            "description": "This is Beds Product 2 description.",
+            "price": 20,
+            "duration_type": "months",
+            "duration_time": 6,
+            "subcategory_id": 13,
+            "image": "https://images.unsplash.com/photo-1521783988139-89397d761dce?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmVkc3xlbnwwfHwwfHx8MA%3D%3D"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Books",
+    "category_id": 7,
+    "subs": [
+      {
+        "name": "Fiction",
+        "image": "fiction.jpg",
+        "category_id": 3,
+        "subcategory_id": 162,
+        "products": [
+          {
+            "name": "Fiction Product 1",
+            "description": "This is Fiction Product 1 description.",
+            "price": 10,
+            "duration_type": "months",
+            "duration_time": 3,
+            "subcategory_id": 18,
+            "image": "https://images.unsplash.com/photo-1626618012641-bfbca5a31239?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D"
+          },
+          {
+            "name": "Fiction Product 2",
+            "description": "This is Fiction Product 2 description.",
+            "price": 20,
+            "duration_type": "days",
+            "duration_time": 6,
+            "subcategory_id": 18,
+            "image": "https://images.unsplash.com/photo-1659999604440-bec7ace198d7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D"
+          }
+        ]
+      },
+      {
+        "name": "Non\u2011Fiction",
+        "image": "non-fiction.jpg",
+        "category_id": 3,
+        "subcategory_id": 163,
+        "products": [
+          {
+            "name": "Non\u2011Fiction Product 1",
+            "description": "This is Non\u2011Fiction Product 1 description.",
+            "price": 10,
+            "duration_type": "months",
+            "duration_time": 3,
+            "subcategory_id": 19,
+            "image": "https://images.unsplash.com/photo-1671774637925-c11dd0051b60?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bm9uJTIwZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D"
+          },
+          {
+            "name": "Non\u2011Fiction Product 2",
+            "description": "This is Non\u2011Fiction Product 2 description.",
+            "price": 20,
+            "duration_type": "days",
+            "duration_time": 6,
+            "subcategory_id": 19,
+            "image": "https://images.unsplash.com/photo-1629552049362-9ce66fe7840d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG5vbiUyMGZpY3Rpb258ZW58MHx8MHx8fDA%3D"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Clothing",
+    "category_id": 8,
+    "subs": [
+      {
+        "name": "Men",
+        "image": "men.jpg",
+        "category_id": 4,
+        "subcategory_id": 167,
+        "products": [
+          {
+            "name": "Men Product 1",
+            "description": "This is Men Product 1 description.",
+            "price": 10,
+            "duration_type": "days",
+            "duration_time": 3,
+            "subcategory_id": 23,
+            "image": "https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWVuJTIwY2xvdGhpbmd8ZW58MHx8MHx8fDA%3D"
+          },
+          {
+            "name": "Men Product 2",
+            "description": "This is Men Product 2 description.",
+            "price": 20,
+            "duration_type": "days",
+            "duration_time": 6,
+            "subcategory_id": 23,
+            "image": "https://images.unsplash.com/photo-1618453292507-4959ece6429e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWVuJTIwY2xvdGhpbmd8ZW58MHx8MHx8fDA%3D"
+          }
+        ]
+      },
+      {
+        "name": "Women",
+        "image": "women.jpg",
+        "category_id": 4,
+        "subcategory_id": 168,
+        "products": [
+          {
+            "name": "Women Product 1",
+            "description": "This is Women Product 1 description.",
+            "price": 10,
+            "duration_type": "months",
+            "duration_time": 3,
+            "subcategory_id": 24,
+            "image": "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d29tZW4lMjBjbG90aGluZ3xlbnwwfHwwfHx8MA%3D%3D"
+          },
+          {
+            "name": "Women Product 2",
+            "description": "This is Women Product 2 description.",
+            "price": 20,
+            "duration_type": "days",
+            "duration_time": 6,
+            "subcategory_id": 24,
+            "image": "https://images.unsplash.com/photo-1576082866986-460d8f2ae4fe?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHdvbWVuJTIwY2xvdGhpbmd8ZW58MHx8MHx8fDA%3D"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tools",
+    "category_id": 4,
+    "subs": [
+      {
+        "name": "Power Tools",
+        "image": "power-tools.jpg",
+        "category_id": 5,
+        "subcategory_id": 164,
+        "products": [
+          {
+            "name": "Power Tools Product 1",
+            "description": "This is Power Tools Product 1 description.",
+            "price": 10,
+            "duration_type": "days",
+            "duration_time": 3,
+            "subcategory_id": 28,
+            "image": "https://images.unsplash.com/photo-1645651964715-d200ce0939cc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cG93ZXIlMjB0b29sc3xlbnwwfHwwfHx8MA%3D%3D"
+          },
+          {
+            "name": "Power Tools Product 2",
+            "description": "This is Power Tools Product 2 description.",
+            "price": 20,
+            "duration_type": "days",
+            "duration_time": 6,
+            "subcategory_id": 28,
+            "image": "https://images.unsplash.com/photo-1683115099413-5b7d85c2950c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cG93ZXIlMjB0b29sc3xlbnwwfHwwfHx8MA%3D%3D"
+          }
+        ]
+      },
+      {
+        "name": "Hand Tools",
+        "image": "hand-tools.jpg",
+        "category_id": 5,
+        "subcategory_id": 169,
+        "products": [
+          {
+            "name": "Hand Tools Product 1",
+            "description": "This is Hand Tools Product 1 description.",
+            "price": 10,
+            "duration_type": "months",
+            "duration_time": 3,
+            "subcategory_id": 29,
+            "image": "https://images.unsplash.com/photo-1567361808960-dec9cb578182?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGFuZCUyMHRvb2xzfGVufDB8fDB8fHww"
+          },
+          {
+            "name": "Hand Tools Product 2",
+            "description": "This is Hand Tools Product 2 description.",
+            "price": 20,
+            "duration_type": "months",
+            "duration_time": 6,
+            "subcategory_id": 29,
+            "image": "https://images.unsplash.com/photo-1508872558182-ffc7f1b387f9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aGFuZCUyMHRvb2xzfGVufDB8fDB8fHww"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sports",
+    "category_id": 2,
+    "subs": [
+      {
+        "name": "Gym Equipment",
+        "image": "gym-equipment.jpg",
+        "category_id": 6,
+        "subcategory_id": 170,
+        "products": [
+          {
+            "name": "Gym Equipment Product 1",
+            "description": "This is Gym Equipment Product 1 description.",
+            "price": 10,
+            "duration_type": "days",
+            "duration_time": 3,
+            "subcategory_id": 33,
+            "image": "https://plus.unsplash.com/premium_photo-1671631630555-1cb3ffa7dfe6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z3ltJTIwZXF1aXBtZW50fGVufDB8fDB8fHww"
+          },
+          {
+            "name": "Gym Equipment Product 2",
+            "description": "This is Gym Equipment Product 2 description.",
+            "price": 20,
+            "duration_type": "months",
+            "duration_time": 6,
+            "subcategory_id": 33,
+            "image": "https://images.unsplash.com/photo-1637666062717-1c6bcfa4a4df?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z3ltJTIwZXF1aXBtZW50fGVufDB8fDB8fHww"
+          }
+        ]
+      },
+      {
+        "name": "Team Sports",
+        "image": "team-sports.jpg",
+        "category_id": 6,
+        "subcategory_id": 171,
+        "products": [
+          {
+            "name": "Team Sports Product 1",
+            "description": "This is Team Sports Product 1 description.",
+            "price": 10,
+            "duration_type": "days",
+            "duration_time": 3,
+            "subcategory_id": 34,
+            "image": "https://images.unsplash.com/photo-1491911923017-19f90d8d7f83?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGVhbSUyMHNwb3J0c3xlbnwwfHwwfHx8MA%3D%3D"
+          },
+          {
+            "name": "Team Sports Product 2",
+            "description": "This is Team Sports Product 2 description.",
+            "price": 20,
+            "duration_type": "days",
+            "duration_time": 6,
+            "subcategory_id": 34,
+            "image": "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dGVhbSUyMHNwb3J0c3xlbnwwfHwwfHx8MA%3D%3D"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Toys",
+    "category_id": 5,
+    "subs": [
+      {
+        "name": "Educational",
+        "image": "educational.jpg",
+        "category_id": 7,
+        "subcategory_id": 172,
+        "products": [
+          {
+            "name": "Educational Product 1",
+            "description": "This is Educational Product 1 description.",
+            "price": 10,
+            "duration_type": "days",
+            "duration_time": 3,
+            "subcategory_id": 38,
+            "image": "https://plus.unsplash.com/premium_photo-1681488216686-b20dbbf421a8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZWR1Y2F0aW9uYWwlMjBwcm9kdWN0c3xlbnwwfHwwfHx8MA%3D%3D"
+          },
+          {
+            "name": "Educational Product 2",
+            "description": "This is Educational Product 2 description.",
+            "price": 20,
+            "duration_type": "days",
+            "duration_time": 6,
+            "subcategory_id": 38,
+            "image": "https://images.unsplash.com/photo-1625335524754-9e26bc4aecc6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZWR1Y2F0aW9uYWwlMjBwcm9kdWN0c3xlbnwwfHwwfHx8MA%3D%3D"
+          }
+        ]
+      },
+      {
+        "name": "Action Figures",
+        "image": "action-figures.jpg",
+        "category_id": 7,
+        "subcategory_id": 173,
+        "products": [
+          {
+            "name": "Action Figures Product 1",
+            "description": "This is Action Figures Product 1 description.",
+            "price": 10,
+            "duration_type": "months",
+            "duration_time": 3,
+            "subcategory_id": 39,
+            "image": "https://images.unsplash.com/photo-1700909415800-6d2a5a83a234?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGFjdGlvbiUyMGZpZ3VyZXN8ZW58MHx8MHx8fDA%3D"
+          },
+          {
+            "name": "Action Figures Product 2",
+            "description": "This is Action Figures Product 2 description.",
+            "price": 20,
+            "duration_type": "days",
+            "duration_time": 6,
+            "subcategory_id": 39,
+            "image": "https://images.unsplash.com/photo-1691315035852-9acb0bf34197?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGFjdGlvbiUyMGZpZ3VyZXN8ZW58MHx8MHx8fDA%3D"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kitchen",
+    "category_id": 9,
+    "subs": [
+      {
+        "name": "Cookware",
+        "image": "cookware.jpg",
+        "category_id": 8,
+        "subcategory_id": 174,
+        "products": [
+          {
+            "name": "Cookware Product 1",
+            "description": "This is Cookware Product 1 description.",
+            "price": 10,
+            "duration_type": "days",
+            "duration_time": 3,
+            "subcategory_id": 43,
+            "image": "https://images.unsplash.com/photo-1556910633-5099dc3971e8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29va3dhcmV8ZW58MHx8MHx8fDA%3D"
+          },
+          {
+            "name": "Cookware Product 2",
+            "description": "This is Cookware Product 2 description.",
+            "price": 20,
+            "duration_type": "months",
+            "duration_time": 6,
+            "subcategory_id": 43,
+            "image": "https://images.unsplash.com/photo-1584990347163-2b86b71390d6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y29va3dhcmV8ZW58MHx8MHx8fDA%3Ds"
+          }
+        ]
+      },
+      {
+        "name": "Appliances",
+        "image": "appliances.jpg",
+        "category_id": 8,
+        "subcategory_id": 175,
+        "products": [
+          {
+            "name": "Appliances Product 1",
+            "description": "This is Appliances Product 1 description.",
+            "price": 10,
+            "duration_type": "months",
+            "duration_time": 3,
+            "subcategory_id": 44,
+            "image": "https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXBwbGlhbmNlc3xlbnwwfHwwfHx8MA%3D%3D"
+          },
+          {
+            "name": "Appliances Product 2",
+            "description": "This is Appliances Product 2 description.",
+            "price": 20,
+            "duration_type": "days",
+            "duration_time": 6,
+            "subcategory_id": 44,
+            "image": "https://images.unsplash.com/photo-1586208958839-06c17cacdf08?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YXBwbGlhbmNlc3xlbnwwfHwwfHx8MA%3D%3D"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Outdoors",
+    "category_id": 10,
+    "subs": [
+      {
+        "name": "Camping",
+        "image": "camping.jpg",
+        "category_id": 9,
+        "subcategory_id": 176,
+        "products": [
+          {
+            "name": "Camping Product 1",
+            "description": "This is Camping Product 1 description.",
+            "price": 10,
+            "duration_type": "days",
+            "duration_time": 3,
+            "subcategory_id": 48,
+            "image": "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FtcGluZ3xlbnwwfHwwfHx8MA%3D%3D"
+          },
+          {
+            "name": "Camping Product 2",
+            "description": "This is Camping Product 2 description.",
+            "price": 20,
+            "duration_type": "months",
+            "duration_time": 6,
+            "subcategory_id": 48,
+            "image": "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGNhbXBpbmd8ZW58MHx8MHx8fDA%3D"
+          }
+        ]
+      },
+      {
+        "name": "Hiking",
+        "image": "hiking.jpg",
+        "category_id": 9,
+        "subcategory_id": 177,
+        "products": [
+          {
+            "name": "Hiking Product 1",
+            "description": "This is Hiking Product 1 description.",
+            "price": 10,
+            "duration_type": "months",
+            "duration_time": 3,
+            "subcategory_id": 49,
+            "image": "https://images.unsplash.com/photo-1645013283037-75b328ba9e8f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aGlraW5nJTIwcHJvZHVjdHN8ZW58MHx8MHx8fDA%3D"
+          },
+          {
+            "name": "Hiking Product 2",
+            "description": "This is Hiking Product 2 description.",
+            "price": 20,
+            "duration_type": "months",
+            "duration_time": 6,
+            "subcategory_id": 49,
+            "image": "https://images.unsplash.com/photo-1582898967731-b5834427fd66?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aGlraW5nJTIwcHJvZHVjdHN8ZW58MHx8MHx8fDA%3D"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Music",
+    "category_id": 6,
+    "subs": [
+      {
+        "name": "Guitars",
+        "image": "guitars.jpg",
+        "category_id": 10,
+        "subcategory_id": 178,
+        "products": [
+          {
+            "name": "Guitars Product 1",
+            "description": "This is Guitars Product 1 description.",
+            "price": 10,
+            "duration_type": "days",
+            "duration_time": 3,
+            "subcategory_id": 53,
+            "image": "https://plus.unsplash.com/premium_photo-1671934973818-8529ac9c4d2d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z3VpdGFyc3xlbnwwfHwwfHx8MA%3D%3D"
+          },
+          {
+            "name": "Guitars Product 2",
+            "description": "This is Guitars Product 2 description.",
+            "price": 20,
+            "duration_type": "months",
+            "duration_time": 6,
+            "subcategory_id": 53,
+            "image": "https://images.unsplash.com/photo-1617256578880-2a48efc3c2ba?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGd1aXRhcnN8ZW58MHx8MHx8fDA%3D"
+          }
+        ]
+      },
+      {
+        "name": "Keyboards",
+        "image": "keyboards.jpg",
+        "category_id": 10,
+        "subcategory_id": 179,
+        "products": [
+          {
+            "name": "Keyboards Product 1",
+            "description": "This is Keyboards Product 1 description.",
+            "price": 10,
+            "duration_type": "days",
+            "duration_time": 3,
+            "subcategory_id": 54,
+            "image": "https://images.unsplash.com/photo-1646355883563-f705e54bb76e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2V5Ym9hcmRzJTIwbXVzaWN8ZW58MHx8MHx8fDA%3D"
+          },
+          {
+            "name": "Keyboards Product 2",
+            "description": "This is Keyboards Product 2 description.",
+            "price": 20,
+            "duration_type": "months",
+            "duration_time": 6,
+            "subcategory_id": 54,
+            "image": "https://plus.unsplash.com/premium_photo-1674057858078-626e43ccad9f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8a2V5Ym9hcmRzJTIwbXVzaWN8ZW58MHx8MHx8fDA%3D"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Photography",
+    "category_id": 12,
+    "subs": [
+      {
+        "name": "DSLR",
+        "image": "dslr.jpg",
+        "category_id": 11,
+        "subcategory_id": 180,
+        "products": [
+          {
+            "name": "DSLR Product 1",
+            "description": "This is DSLR Product 1 description.",
+            "price": 10,
+            "duration_type": "days",
+            "duration_time": 3,
+            "subcategory_id": 58,
+            "image": "https://plus.unsplash.com/premium_photo-1673349178635-39b654f84401?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZHNscnxlbnwwfHwwfHx8MA%3D%3D"
+          },
+          {
+            "name": "DSLR Product 2",
+            "description": "This is DSLR Product 2 description.",
+            "price": 20,
+            "duration_type": "days",
+            "duration_time": 6,
+            "subcategory_id": 58,
+            "image": "https://images.unsplash.com/photo-1617036083087-ce31fac66b23?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZHNscnxlbnwwfHwwfHx8MA%3D%3D"
+          }
+        ]
+      },
+      {
+        "name": "Mirrorless",
+        "image": "mirrorless.jpg",
+        "category_id": 11,
+        "subcategory_id": 181,
+        "products": [
+          {
+            "name": "Mirrorless Product 1",
+            "description": "This is Mirrorless Product 1 description.",
+            "price": 10,
+            "duration_type": "days",
+            "duration_time": 3,
+            "subcategory_id": 59,
+            "image": "https://images.unsplash.com/photo-1666332100970-1fd5c53c6497?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWlycm9ybGVzc3xlbnwwfHwwfHx8MA%3D%3D"
+          },
+          {
+            "name": "Mirrorless Product 2",
+            "description": "This is Mirrorless Product 2 description.",
+            "price": 20,
+            "duration_type": "days",
+            "duration_time": 6,
+            "subcategory_id": 59,
+            "image": "https://images.unsplash.com/photo-1666331872801-98f681cd48dd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG1pcnJvcmxlc3N8ZW58MHx8MHx8fDA%3D"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gaming",
+    "category_id": 11,
+    "subs": [
+      {
+        "name": "Consoles",
+        "image": "consoles.jpg",
+        "category_id": 12,
+        "subcategory_id": 182,
+        "products": [
+          {
+            "name": "Consoles Product 1",
+            "description": "This is Consoles Product 1 description.",
+            "price": 10,
+            "duration_type": "days",
+            "duration_time": 3,
+            "subcategory_id": 63,
+            "image": "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29uc29sZXN8ZW58MHx8MHx8fDA%3D"
+          },
+          {
+            "name": "Consoles Product 2",
+            "description": "This is Consoles Product 2 description.",
+            "price": 20,
+            "duration_type": "days",
+            "duration_time": 6,
+            "subcategory_id": 63,
+            "image": "https://images.unsplash.com/photo-1531390658120-e06b58d826ea?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uc29sZXN8ZW58MHx8MHx8fDA%3D"
+          }
+        ]
+      },
+      {
+        "name": "PC Gaming",
+        "image": "pc-gaming.jpg",
+        "category_id": 12,
+        "subcategory_id": 183,
+        "products": [
+          {
+            "name": "PC Gaming Product 1",
+            "description": "This is PC Gaming Product 1 description.",
+            "price": 10,
+            "duration_type": "months",
+            "duration_time": 3,
+            "subcategory_id": 64,
+            "image": "https://plus.unsplash.com/premium_photo-1682141882061-c7676602e111?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGMlMjBnYW1pbmd8ZW58MHx8MHx8fDA%3D"
+          },
+          {
+            "name": "PC Gaming Product 2",
+            "description": "This is PC Gaming Product 2 description.",
+            "price": 20,
+            "duration_type": "months",
+            "duration_time": 6,
+            "subcategory_id": 64,
+            "image": "https://images.unsplash.com/photo-1642791401714-a0d4e02d4bb6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBjJTIwZ2FtaW5nfGVufDB8fDB8fHww"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Travel",
+    "category_id": 13,
+    "subs": [
+      {
+        "name": "Luggage",
+        "image": "luggage.jpg",
+        "category_id": 13,
+        "subcategory_id": 184,
+        "products": [
+          {
+            "name": "Luggage Product 1",
+            "description": "This is Luggage Product 1 description.",
+            "price": 10,
+            "duration_type": "months",
+            "duration_time": 3,
+            "subcategory_id": 68,
+            "image": "https://images.unsplash.com/photo-1639598003276-8a70fcaaad6c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bHVnZ2FnZXxlbnwwfHwwfHx8MA%3D%3D"
+          },
+          {
+            "name": "Luggage Product 2",
+            "description": "This is Luggage Product 2 description.",
+            "price": 20,
+            "duration_type": "months",
+            "duration_time": 6,
+            "subcategory_id": 68,
+            "image": "https://plus.unsplash.com/premium_photo-1684407616508-b9e82c8bc8a0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bHVnZ2FnZXxlbnwwfHwwfHx8MA%3D%3D"
+          }
+        ]
+      },
+      {
+        "name": "Backpacks",
+        "image": "backpacks.jpg",
+        "category_id": 13,
+        "subcategory_id": 185,
+        "products": [
+          {
+            "name": "Backpacks Product 1",
+            "description": "This is Backpacks Product 1 description.",
+            "price": 10,
+            "duration_type": "months",
+            "duration_time": 3,
+            "subcategory_id": 69,
+            "image": "https://plus.unsplash.com/premium_photo-1663127330677-8d15656d6c39?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmFja3BhY2tzfGVufDB8fDB8fHww"
+          },
+          {
+            "name": "Backpacks Product 2",
+            "description": "This is Backpacks Product 2 description.",
+            "price": 20,
+            "duration_type": "days",
+            "duration_time": 6,
+            "subcategory_id": 69,
+            "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmFja3BhY2tzfGVufDB8fDB8fHww"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Health",
+    "category_id": 14,
+    "subs": [
+      {
+        "name": "Supplements",
+        "image": "supplements.jpg",
+        "category_id": 14,
+        "subcategory_id": 186,
+        "products": [
+          {
+            "name": "Supplements Product 1",
+            "description": "This is Supplements Product 1 description.",
+            "price": 10,
+            "duration_type": "days",
+            "duration_time": 3,
+            "subcategory_id": 73,
+            "image": "https://images.unsplash.com/photo-1596177582967-a5d143a41237?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c3VwcGxlbWVudHN8ZW58MHx8MHx8fDA%3D"
+          },
+          {
+            "name": "Supplements Product 2",
+            "description": "This is Supplements Product 2 description.",
+            "price": 20,
+            "duration_type": "months",
+            "duration_time": 6,
+            "subcategory_id": 73,
+            "image": "https://images.unsplash.com/photo-1664216294573-b28282de564b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHN1cHBsZW1lbnRzfGVufDB8fDB8fHww"
+          }
+        ]
+      },
+      {
+        "name": "Personal Care",
+        "image": "personal-care.jpg",
+        "category_id": 14,
+        "subcategory_id": 187,
+        "products": [
+          {
+            "name": "Personal Care Product 1",
+            "description": "This is Personal Care Product 1 description.",
+            "price": 10,
+            "duration_type": "months",
+            "duration_time": 3,
+            "subcategory_id": 74,
+            "image": "https://images.unsplash.com/photo-1577467014911-2c66a5c1995a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29uYWwlMjBjYXJlfGVufDB8fDB8fHww"
+          },
+          {
+            "name": "Personal Care Product 2",
+            "description": "This is Personal Care Product 2 description.",
+            "price": 20,
+            "duration_type": "days",
+            "duration_time": 6,
+            "subcategory_id": 74,
+            "image": "https://images.unsplash.com/photo-1601612628452-9e99ced43524?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcnNvbmFsJTIwY2FyZXxlbnwwfHwwfHx8MA%3D%3D"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pets",
+    "category_id": 15,
+    "subs": [
+      {
+        "name": "Dog Supplies",
+        "image": "dog-supplies.jpg",
+        "category_id": 15,
+        "subcategory_id": 188,
+        "products": [
+          {
+            "name": "Dog Supplies Product 1",
+            "description": "This is Dog Supplies Product 1 description.",
+            "price": 10,
+            "duration_type": "days",
+            "duration_time": 3,
+            "subcategory_id": 78,
+            "image": "https://images.unsplash.com/photo-1518640165980-d3e0e2aa6c1e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nJTIwaG91c2V8ZW58MHx8MHx8fDA%3D"
+          },
+          {
+            "name": "Dog Supplies Product 2",
+            "description": "This is Dog Supplies Product 2 description.",
+            "price": 20,
+            "duration_type": "days",
+            "duration_time": 6,
+            "subcategory_id": 78,
+            "image": "https://plus.unsplash.com/premium_photo-1667563115157-a6d48d8b03d0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBldCUyMHN1cHBsaWVzfGVufDB8fDB8fHww"
+          }
+        ]
+      },
+      {
+        "name": "Cat Supplies",
+        "image": "cat-supplies.jpg",
+        "category_id": 15,
+        "subcategory_id": 189,
+        "products": [
+          {
+            "name": "Cat Supplies Product 1",
+            "description": "This is Cat Supplies Product 1 description.",
+            "price": 10,
+            "duration_type": "months",
+            "duration_time": 3,
+            "subcategory_id": 79,
+            "image": "https://images.unsplash.com/photo-1527150602-a98f7a6f2746?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBldCUyMHN1cHBsaWVzfGVufDB8fDB8fHww"
+          },
+          {
+            "name": "Cat Supplies Product 2",
+            "description": "This is Cat Supplies Product 2 description.",
+            "price": 20,
+            "duration_type": "months",
+            "duration_time": 6,
+            "subcategory_id": 79,
+            "image": "https://plus.unsplash.com/premium_photo-1707353402114-9881ed692913?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNhdCUyMHN1cHBsaWVzfGVufDB8fDB8fHww"
+          }
+        ]
+      }
+    ]
+  }
+]
